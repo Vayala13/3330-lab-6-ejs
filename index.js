@@ -15,8 +15,28 @@ const user = {
 	username: "Vivi"
 };
 
+const projects = [
+	{
+		name: "MBMT Case Tracker",
+		description: "A case tracker for a law firm's paralegal team: upcoming and overdue deadlines, stale cases, call logs, task templates and a day planner.",
+		tech: "React, TypeScript, Express, SQLite",
+		demo: "https://mbmt-mvp.onrender.com"
+	},
+	{
+		name: "LLM Cost Optimizer",
+		description: "A routing layer that sends each request to the cheapest LLM that can handle it at acceptable quality.",
+		tech: "Python, LLM APIs",
+		link: "https://github.com/Vayala13/LLM-COST-Autopilot"
+	},
+	{
+		name: "Edumusic",
+		description: "Beginner-friendly music lessons for a variety of instruments.",
+		link: "https://github.com/Vayala13/Edumusic"
+	}
+];
+
 app.get("/", (req, res) => {
-	res.render("home", user);
+	res.render("home", { ...user, projects });
 });
 
 app.get("/about", (req, res) => {
